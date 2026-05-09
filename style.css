@@ -1,61 +1,96 @@
+:root {
+    --primary: #ff5fa2;
+    --primary-dark: #d63384;
+    --secondary: #d9c2ff;
+
+    --bg-main: #fff7fc;
+    --bg-section: #f8efff;
+    --bg-card: #ffffff;
+
+    --accent: #c77dff;
+    --text: #333;
+    --text-light: #666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #121212; /* fundo cinza escuro */
+    background-color: var(--bg-main);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
+/* CALCULADORA */
 .calculadora {
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 25px #7b2cbf99;
+    background-color: var(--bg-card);
+    padding: 25px;
+    border-radius: 25px;
+    border: 2px solid var(--secondary);
+    box-shadow: 0 10px 25px rgba(214, 51, 132, 0.15);
 }
 
+/* DISPLAY */
 #display {
     width: 100%;
-    height: 50px;
-    font-size: 22px;
-    margin-bottom: 15px;
+    height: 60px;
+    box-sizing: border-box;
+    font-size: 26px;
+    margin-bottom: 18px;
     text-align: right;
-    padding: 5px;
-    border: none;
-    border-radius: 8px;
-    background-color: #2d2540;
-    color: #fff;
+    padding: 10px;
+    border-radius: 14px;
+    background-color: var(--bg-section);
+    color: var(--text);
+    font-weight: bold;
+
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
+/* GRID DOS BOTÕES */
 .botoes {
     display: grid;
-    grid-template-columns: repeat(4, 60px);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
 }
 
+/* BOTÕES */
 button {
-    height: 50px;
-    font-size: 18px;
+    height: 60px;
+    font-size: 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 16px;
     cursor: pointer;
-    background-color: #5a189a;
+    background-color: var(--primary);
     color: white;
-    transition: 0.2s;
+    font-weight: 600;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 95, 162, 0.25);
 }
 
 button:hover {
-    background-color: #7b2cbf;
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
+/* BOTÃO IGUAL */
 .igual {
-    background-color: #c77dff;
-    color: #2d2540;
+    background-color: var(--accent);
+    color: var(--text);
+    font-weight: bold;
 }
 
 .igual:hover {
-    background-color: #e0aaff;
+    background-color: var(--secondary);
 }
 
+/* BOTÃO ZERO */
 .zero {
     grid-column: span 2;
 }
